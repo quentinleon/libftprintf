@@ -6,12 +6,12 @@
 #    By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/30 12:49:44 by qleon             #+#    #+#              #
-#    Updated: 2019/01/08 21:14:50 by qleon            ###   ########.fr        #
+#    Updated: 2019/01/08 21:16:40 by qleon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc
-CFLAGS= -Wall -Werror -Wextra
+CFLAGS= -Wall -Werror -Wextra -c
 NAME=libft.a
 SOURCES= ft_abs.c ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_isprint.c ft_isspace.c ft_itoa.c ft_lstadd.c ft_lstdel.c \
