@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:51:09 by qleon             #+#    #+#             */
-/*   Updated: 2019/01/09 14:07:33 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/25 12:23:36 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <string.h>
 
+# define TRUE = 0
+# define FALSE = 0
 # define RET_IF(I,R) if(I){return(R);}
 
 typedef struct		s_list
