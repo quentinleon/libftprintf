@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 18:51:09 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/25 20:39:14 by qleon            ###   ########.fr       */
+/*   Created: 2019/08/20 20:28:38 by qleon             #+#    #+#             */
+/*   Updated: 2019/08/25 16:25:22 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_LIBFTPRINTF_H
+# define FT_LIBFTPRINTF_H
 # include <stdlib.h>
+# include <stdarg.h>
 
-# define TRUE 1
-# define FALSE 0
+# define TRUE = 0
+# define FALSE = 0
 # define RET_IF(I,R) if(I){return(R);}
 
 typedef struct		s_list
@@ -92,5 +93,20 @@ int					ft_abs(int n);
 void				ft_strtolower(char *str);
 void				ft_strtoupper(char *str);
 int					ft_strcmp_ci(const char *str1, const char *str2);
+
+int					ft_printf(const char *format, ...);
+int					ft_vprintf(const char *format, va_list ap);
+
+int					ft_dprintf(int fd, const char *format, ...);
+int					ft_vdprintf(int fd, const char *format, va_list ap);
+
+int					ft_sprintf(char *buffer, const char *format, ...);
+int					ft_vsprintf(char *buffer, const char *format, va_list ap);
+
+int					ft_snprintf(char *buffer, size_t size, const char *format, ...);
+int					ft_vsnprintf(char *buffer, size_t size, const char *format, va_list ap);
+
+int					ft_asprintf(char **ret, const char *format, ...);
+int					ft_vasprintf(char **ret, const char *format, va_list ap);
 
 #endif

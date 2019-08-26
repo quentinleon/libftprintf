@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 20:28:53 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/22 15:23:36 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/25 18:25:51 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,7 @@ t_str	*new_string(void)
 	return (str);
 }
 
-void	append(t_str *str, char *addition)
-{
-	int		len;
-
-	len = ft_strlen(addition);
-	append_len(str, addition, len);
-}
-
-void	append_len(t_str *str, char *addition, int len)
+void			check_expand(t_str *str, int len)
 {
 	char	*newstr;
 
@@ -44,7 +36,29 @@ void	append_len(t_str *str, char *addition, int len)
 		free(str->str);
 		str->str = newstr;
 	}
+}
+
+void	append_str(t_str *str, const char *addition, int len)
+{
+	check_expand(str, len);
 	ft_strncpy(str->str + str->len, addition, len);
 	str->len += len;
+	str->str[str->len] = 0;
+}
+
+void			prepend_chars(t_str *str, char c, int amt)
+{
+	check_expand(str, amt);
+	ft_memmove(str->str + amt, str->str, str->len);
+	ft_memset(str->str, c, amt);
+	str->len += amt;
+	str->str[str->len] = 0;
+}
+
+void			append_chars(t_str *str, char c, int amt)
+{
+	check_expand(str, amt);
+	ft_memset(str->str + str->len, c, amt);
+	str->len += amt;
 	str->str[str->len] = 0;
 }

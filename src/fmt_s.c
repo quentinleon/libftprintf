@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester.c                                           :+:      :+:    :+:   */
+/*   fmt_s.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/20 20:28:48 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/25 20:55:03 by qleon            ###   ########.fr       */
+/*   Created: 2019/08/25 15:25:09 by qleon             #+#    #+#             */
+/*   Updated: 2019/08/25 19:26:14 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libftprintf.h"
+#include "printf_utils.h"
 
-int		main(int c, char **v)
+t_str	*fmt_s(t_conv *conv, va_list ap)
 {
-	ft_printf("|%2c|%5c|%-5c|\n", 'a', 'b', 'c');
-	ft_printf("|%s|%5s|%-5s|\n", "hi", "hi", "hi");
+	t_str	*str;
+	char	*s;
 
-	int		x = 10;
-	char	*y = malloc(1000);
-	int		z = 1;
-	ft_printf("|%14p|%14p|%14p|\n", &x, y, &z);
-	printf("|%p|%p|%p|\n", &x, y, &z);
-	free(y);
-	
-	printf("|%r|%5%|\n");
-	ft_printf("|%r|%5%|\n");
-	//%0+# 123.123hhp
-	return (0);
+	s = va_arg(ap, char *);
+	str = new_string();
+	append_str(str, s, ft_strlen(s));
+	pad_width(str, conv);
+	return (str);
 }
