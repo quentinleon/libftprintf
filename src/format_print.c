@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 15:40:13 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/25 20:59:32 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 14:28:50 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ t_str	*format_print(const char *format, va_list ap)
 
 t_str	*(*g_fmt_disp[])(t_conv *, va_list) =
 {
+	['d'] = fmt_di,
+	['i'] = fmt_di,
+	['u'] = fmt_u,
+	['o'] = fmt_o,
 	['c'] = fmt_c,
 	['s'] = fmt_s,
 	['p'] = fmt_p,

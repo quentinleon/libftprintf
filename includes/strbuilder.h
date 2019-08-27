@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 20:29:02 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/25 18:25:40 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/26 14:18:41 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FT_STRBUILDER_H
 # include <stdlib.h>
 # include "libft.h"
+
+# define STR_START_SIZE 256
 
 typedef struct	s_str {
 	char		*str;

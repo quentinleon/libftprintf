@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 13:25:23 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/25 16:21:18 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 14:21:40 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		parse_flags(const char *fs, int *l)
 
 	flags = 0;
 	while (fs[*l] && (fs[*l] == '-' || fs[*l] == '+' || fs[*l] == ' ' ||
-			fs[*l] == '#' || fs[*l] == '0'))
+			fs[*l] == '#' || (fs[*l] == '0')))
 	{
 		if (fs[*l] == '-')
 			flags |= MINUS;
@@ -53,9 +53,10 @@ int		parse_precision(const char *fs, int *l)
 {
 	int precision;
 
-	precision = 0;
+	precision = -1;
 	if (fs[*l] && fs[*l] == '.')
 	{
+		precision = 0;
 		(*l)++;
 		while (fs[*l] && (fs[*l] >= '0' && fs[*l] <= '9'))
 		{
@@ -110,5 +111,7 @@ t_conv	parse_conversion(const char *fs, int *l)
 		conv.specifier = fs[*l];
 		(*l)++;
 	}
+	if (conv.precision >= 0 && conv.flags & ZERO)
+		conv.flags ^= ZERO;
 	return (conv);
 }

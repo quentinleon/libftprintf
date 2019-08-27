@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 20:28:53 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/25 18:25:51 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/26 14:19:05 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ t_str	*new_string(void)
 	t_str	*str;
 
 	str = (t_str *)malloc(sizeof(t_str));
-	str->size = 1024;
+	str->size = STR_START_SIZE;
 	str->len = 0;
 	str->str = (char *)malloc(sizeof(char) * (1024));
 	return (str);
 }
 
-void			check_expand(t_str *str, int len)
+void	check_expand(t_str *str, int len)
 {
 	char	*newstr;
 
@@ -46,7 +46,7 @@ void	append_str(t_str *str, const char *addition, int len)
 	str->str[str->len] = 0;
 }
 
-void			prepend_chars(t_str *str, char c, int amt)
+void	prepend_chars(t_str *str, char c, int amt)
 {
 	check_expand(str, amt);
 	ft_memmove(str->str + amt, str->str, str->len);
@@ -55,7 +55,7 @@ void			prepend_chars(t_str *str, char c, int amt)
 	str->str[str->len] = 0;
 }
 
-void			append_chars(t_str *str, char c, int amt)
+void	append_chars(t_str *str, char c, int amt)
 {
 	check_expand(str, amt);
 	ft_memset(str->str + str->len, c, amt);
