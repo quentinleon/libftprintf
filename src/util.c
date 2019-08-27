@@ -6,49 +6,29 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 13:26:19 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 15:06:56 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 16:38:27 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_utils.h"
 
-int		find_next_conv(const char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] && str[i] != '%')
-	{
-		i++;
-	}
-	return (i);
-}
-
-void	handle_precision(t_str *str, t_conv *conv, int is_float)
+void	handle_precision(t_str *str, t_conv *conv)
 {
 	t_conv		precision_fc;
 	int			precision;
 
 	precision = conv->precision;
-	if (is_float)
+	if (precision < 0)
+		precision = 1;
+	precision_fc.width = precision;
+	precision_fc.precision = -1;
+	precision_fc.flags = 0;
+	precision_fc.flags |= ZERO;
+	pad_width(str, &precision_fc);
+	if (precision == 0 && str->str[0] == '0')
 	{
-		if (precision < 0)
-			precision = 6;
-	}
-	else
-	{
-		if (precision < 0)
-			precision = 1;
-		precision_fc.width = precision;
-		precision_fc.precision = -1;
-		precision_fc.flags = 0;
-		precision_fc.flags |= ZERO;
-		pad_width(str, &precision_fc);
-		if (precision == 0 && str->str[0] == '0')
-		{
-			str->len -= 1;
-			str->str[str->len] = 0;
-		}
+		str->len -= 1;
+		str->str[str->len] = 0;
 	}
 }
 

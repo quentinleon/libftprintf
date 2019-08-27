@@ -6,12 +6,11 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 11:44:22 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 15:21:16 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 15:31:24 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_utils.h"
-#include <stdio.h> //fuck me norme
 
 intmax_t	get_arg_o(int len, va_list ap)
 {

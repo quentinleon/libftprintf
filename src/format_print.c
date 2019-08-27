@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 15:40:13 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 14:28:50 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 16:39:07 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ t_str	*(*g_fmt_disp[])(t_conv *, va_list) =
 	['i'] = fmt_di,
 	['u'] = fmt_u,
 	['o'] = fmt_o,
+	['x'] = fmt_x,
+	['X'] = fmt_bigx,
+	['f'] = fmt_f,
 	['c'] = fmt_c,
 	['s'] = fmt_s,
 	['p'] = fmt_p,
@@ -70,4 +73,16 @@ int		append_conv(t_str *str, const char *fmt_str, va_list ap)
 		append_chars(str, conv.specifier, 1);
 	}
 	return (fmt_len);
+}
+
+int		find_next_conv(const char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] && str[i] != '%')
+	{
+		i++;
+	}
+	return (i);
 }
