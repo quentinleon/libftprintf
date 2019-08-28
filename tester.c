@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 20:28:48 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 15:16:00 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 17:45:25 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int		main(int c, char **v)
 	int		z = 1;
 	test_both("|%p|%p|%p|\n", &x, y, &z);
 	free(y);
-	
+
 	test_both("|%r|%5%|\n");
-	
+
 	test_both("|%i|%8.5i|%i|\n", 123, -123, 0);
 	test_both("|%0+6i|%li|%hhi|\n", 123, -123, 400);
 
@@ -54,6 +54,8 @@ int		main(int c, char **v)
 	test_both("%08.3u\n", 8375);
 
 	test_both("|%#-5.0o|\n", 0);
+
+	test_both("|%f|%f|\n", 123.456, -123.456);
 
 	//test_both("|%i|%8.5i|%i|\n", 123, -123, 0);
 	//%0+# 123.123hhp

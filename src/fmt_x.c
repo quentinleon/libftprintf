@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 11:44:22 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 15:46:41 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 19:14:41 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_str		*fmt_x(t_conv *conv, va_list ap)
 	i = get_arg_x(conv->length, ap);
 	str = new_string();
 	itoa_base(str, i, 16, FALSE);
-	handle_precision(str, conv, 0);
+	handle_precision(str, conv);
 	if (conv->flags & HASH && i != 0)
 		if (conv->flags & ZERO && !(conv->flags & MINUS))
 		{

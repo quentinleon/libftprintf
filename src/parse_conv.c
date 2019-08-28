@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 13:25:23 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 14:21:40 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 19:14:51 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,5 @@ t_conv	parse_conversion(const char *fs, int *l)
 		conv.specifier = fs[*l];
 		(*l)++;
 	}
-	if (conv.precision >= 0 && conv.flags & ZERO)
-		conv.flags ^= ZERO;
 	return (conv);
 }

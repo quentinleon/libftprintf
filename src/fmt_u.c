@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 11:44:22 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 12:01:04 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 17:38:09 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_str		*fmt_u(t_conv *conv, va_list ap)
 	i = get_arg_u(conv->length, ap);
 	str = new_string();
 	itoa_base(str, i, 10, FALSE);
-	handle_precision(str, conv, 0);
+	handle_precision(str, conv);
 	pad_width(str, conv);
 	return (str);
 }

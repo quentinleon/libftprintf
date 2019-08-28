@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 13:26:19 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 16:38:27 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 19:48:29 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	handle_precision(t_str *str, t_conv *conv)
 	t_conv		precision_fc;
 	int			precision;
 
+	if (conv->precision >= 0 && conv->flags & ZERO)
+		conv->flags ^= ZERO;
 	precision = conv->precision;
 	if (precision < 0)
 		precision = 1;
@@ -62,7 +64,6 @@ void	add_sign(t_str *str, int replace, int is_neg, t_conv *conv)
 		sign = '+';
 	else if (conv->flags & SPACE)
 		sign = ' ';
-
 	if (sign != 0)
 	{
 		if (replace)
