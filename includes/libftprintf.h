@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 20:28:38 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/25 16:25:22 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 20:16:00 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ int					ft_vdprintf(int fd, const char *format, va_list ap);
 int					ft_sprintf(char *buffer, const char *format, ...);
 int					ft_vsprintf(char *buffer, const char *format, va_list ap);
 
-int					ft_snprintf(char *buffer, size_t size, const char *format, ...);
-int					ft_vsnprintf(char *buffer, size_t size, const char *format, va_list ap);
+int					ft_snprintf(char *buf, size_t size, const char *fmt, ...);
+int					ft_vsnprintf(char *b, size_t s, const char *f, va_list ap);
 
 int					ft_asprintf(char **ret, const char *format, ...);
 int					ft_vasprintf(char **ret, const char *format, va_list ap);

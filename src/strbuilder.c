@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 20:28:53 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/26 14:19:05 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 20:27:47 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	check_expand(t_str *str, int len)
 void	append_str(t_str *str, const char *addition, int len)
 {
 	check_expand(str, len);
-	ft_strncpy(str->str + str->len, addition, len);
+	ft_memcpy(str->str + str->len, addition, len);
 	str->len += len;
 	str->str[str->len] = 0;
 }

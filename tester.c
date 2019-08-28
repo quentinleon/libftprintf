@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 20:28:48 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 17:45:25 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/27 20:19:25 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	test_both(const char *fmt, ...)
 
 int		main(int c, char **v)
 {
-	test_both("|%2c|%05c|%-5c|\n", 'a', 'b', 'c');
+	test_both("%-5c", '');
+	/*test_both("|%2c|%05c|%-5c|\n", 'a', 'b', 'c');
 	test_both("|%s|%05s|%-5s|\n", "hi", "hi", "hi");
 
 	int		x = 10;
@@ -58,6 +59,6 @@ int		main(int c, char **v)
 	test_both("|%f|%f|\n", 123.456, -123.456);
 
 	//test_both("|%i|%8.5i|%i|\n", 123, -123, 0);
-	//%0+# 123.123hhp
+	//%0+# 123.123hhp*/
 	return (0);
 }
