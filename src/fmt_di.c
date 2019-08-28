@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 18:04:32 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 19:14:56 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/28 15:11:11 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,14 @@ t_str		*fmt_di(t_conv *conv, va_list ap)
 {
 	t_str		*str;
 	intmax_t	i;
+	uintmax_t	ui;
 
 	i = get_arg_d(conv->length, ap);
+	ui = i;
+	if (i < 0)
+		ui = i * -1;
 	str = new_string();
-	itoa_base(str, i, 10, FALSE);
+	itoa_base(str, ui, 10, FALSE);
 	handle_precision(str, conv);
 	if (conv->flags & ZERO && !(conv->flags & MINUS))
 		add_sign(str, pad_width(str, conv), i < 0, conv);

@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 13:25:48 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 16:38:47 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/28 14:27:39 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_conv			parse_conversion(const char *fmt_str, int *c_len);
 void			handle_precision(t_str *str, t_conv *conv);
 int				pad_width(t_str *str, t_conv *conv);
 void			add_sign(t_str *str, int replace, int is_neg, t_conv *conv);
-void			itoa_base(t_str *str, intmax_t value, int base, int upper);
+void			itoa_base(t_str *str, uintmax_t value, int base, int upper);
 
 t_str			*fmt_di(t_conv *conv, va_list ap);
 t_str			*fmt_u(t_conv *conv, va_list ap);

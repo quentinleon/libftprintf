@@ -6,13 +6,13 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/27 11:44:22 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 19:14:32 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/28 15:10:47 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_utils.h"
 
-intmax_t	get_arg_o(int len, va_list ap)
+uintmax_t	get_arg_o(int len, va_list ap)
 {
 	if (len == 0)
 		return (va_arg(ap, unsigned int));
@@ -37,7 +37,7 @@ intmax_t	get_arg_o(int len, va_list ap)
 t_str		*fmt_o(t_conv *conv, va_list ap)
 {
 	t_str		*str;
-	intmax_t	i;
+	uintmax_t	i;
 
 	i = get_arg_o(conv->length, ap);
 	str = new_string();

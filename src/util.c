@@ -6,7 +6,7 @@
 /*   By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/25 13:26:19 by qleon             #+#    #+#             */
-/*   Updated: 2019/08/27 19:48:29 by qleon            ###   ########.fr       */
+/*   Updated: 2019/08/28 14:52:14 by qleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,10 @@ void	add_sign(t_str *str, int replace, int is_neg, t_conv *conv)
 	}
 }
 
-void	itoa_base(t_str *str, intmax_t value, int base, int upper)
+void	itoa_base(t_str *str, uintmax_t value, int base, int upper)
 {
 	char	*charset;
 
-	if (value < 0)
-		value *= -1;
 	if (upper)
 	{
 		charset = "0123456789ABCDEF";

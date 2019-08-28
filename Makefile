@@ -6,7 +6,7 @@
 #    By: qleon <qleon@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/22 19:41:40 by qleon             #+#    #+#              #
-#    Updated: 2019/08/27 20:39:50 by qleon            ###   ########.fr        #
+#    Updated: 2019/08/27 20:46:05 by qleon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ INCLUDES= includes/
 LIBFTDIR = libft/
 LIBFT = $(LIBFTDIR)/libft.a
 
-all: $(NAME) header
+all: $(NAME)
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFTDIR)
